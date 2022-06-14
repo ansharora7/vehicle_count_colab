@@ -3,7 +3,7 @@ Create a virtual environment using venv or conda
 
 For CPU
 ```bash
- git clone https://github.com/ansharora7/vehicle_count.git
+ git clone https://github.com/ansharora7/vehicle_count_colab.git
  cd Yolov5_DeepSort_Pytorch
  pip install -r requirements.txt
  sh run.sh
@@ -11,7 +11,7 @@ For CPU
  
  For GPU
 ```bash
- git clone https://github.com/ansharora7/vehicle_count.git
+ git clone https://github.com/ansharora7/vehicle_count_count.git
  cd Yolov5_DeepSort_Pytorch
  pip install -r requirements.txt
  sh run_gpu.sh
