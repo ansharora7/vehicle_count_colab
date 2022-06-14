@@ -210,7 +210,7 @@ def detect(opt):
                 cv2.putText(im0, str(count), org, font, 
                    fontScale, color, thickness, cv2.LINE_AA)
                 # cv2.imshow(str(p), im0)
-                cv2_imshow(str(p), im0)
+                cv2_imshow(im0)
                 if cv2.waitKey(1) == ord('q'):  # q to quit
                     raise StopIteration
 

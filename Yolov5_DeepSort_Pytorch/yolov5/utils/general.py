@@ -387,7 +387,7 @@ def check_imshow():
     try:
         # assert not is_docker(), 'cv2.imshow() is disabled in Docker environments'
         # assert not is_colab(), 'cv2.imshow() is disabled in Google Colab environments'
-        cv2_imshow('test', np.zeros((1, 1, 3)))
+        cv2_imshow(np.zeros((1, 1, 3)))
         cv2.waitKey(1)
         cv2.destroyAllWindows()
         cv2.waitKey(1)
