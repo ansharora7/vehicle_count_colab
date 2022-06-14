@@ -34,7 +34,8 @@ import torch
 import torch.backends.cudnn as cudnn
 
 from google.colab.patches import cv2_imshow
-from IPython.display import Image
+# from IPython.display import Image
+from PIL import Image
 
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[0]  # YOLOv5 root directory
@@ -179,7 +180,9 @@ def run(
             if view_img:
                 # cv2.imshow(str(p), im0)
                 # cv2_imshow(im0)
-                Image(im0)
+                # Image(im0)
+                img = Image.fromarray(im0, 'RGB')
+                img.show()
                 cv2.waitKey(1)  # 1 millisecond
 
             # Save results (image with detections)

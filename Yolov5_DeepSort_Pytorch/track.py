@@ -10,7 +10,8 @@ import sys
 sys.path.insert(0, './yolov5')
 
 from google.colab.patches import cv2_imshow
-from IPython.display import Image
+# from IPython.display import Image
+from PIL import Image
 
 import argparse
 import os
@@ -212,7 +213,9 @@ def detect(opt):
                    fontScale, color, thickness, cv2.LINE_AA)
                 # cv2.imshow(str(p), im0)
                 # cv2_imshow(im0)
-                Image(im0)
+                # Image(im0)
+                img = Image.fromarray(im0, 'RGB')
+                img.show()
                 if cv2.waitKey(1) == ord('q'):  # q to quit
                     raise StopIteration
 
@@ -254,7 +257,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--yolo_model', nargs='+', type=str, default='yolov5s.pt', help='model.pt path(s)')
     parser.add_argument('--deep_sort_model', type=str, default='osnet_x0_25')
-    parser.add_argument('--source', type=str, default='videos/Asia - 23712.mp4', help='source')  # file/folder, 0 for webcam
+    parser.add_argument('--source', type=str, default='vid1.mp4', help='source')  # file/folder, 0 for webcam
     parser.add_argument('--output', type=str, default='inference/output', help='output folder')  # output folder
     parser.add_argument('--imgsz', '--img', '--img-size', nargs='+', type=int, default=[480], help='inference size h,w')
     parser.add_argument('--conf-thres', type=float, default=0.5, help='object confidence threshold')

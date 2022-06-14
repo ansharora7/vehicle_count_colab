@@ -26,7 +26,8 @@ from typing import Optional
 from zipfile import ZipFile
 
 from google.colab.patches import cv2_imshow
-from IPython.display import Image
+# from IPython.display import Image
+from PIL import Image
 
 import cv2
 import numpy as np
