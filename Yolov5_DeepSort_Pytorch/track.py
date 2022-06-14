@@ -265,7 +265,7 @@ if __name__ == '__main__':
     parser.add_argument('--fourcc', type=str, default='mp4v', help='output video codec (verify ffmpeg support)')
     parser.add_argument('--device', default='0', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
     parser.add_argument('--show-vid', action='store_false', help='display tracking video results')
-    parser.add_argument('--save-vid', action='store_true', help='save video tracking results')
+    parser.add_argument('--save-vid', default = 'True', action='store_true', help='save video tracking results')
     parser.add_argument('--save-txt', action='store_true', help='save MOT compliant results to *.txt')
     # class 0 is person, 1 is bycicle, 2 is car... 79 is oven
     parser.add_argument('--classes', nargs='+', type=int, help='filter by class: --class 0, or --class 16 17')
