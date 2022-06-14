@@ -10,6 +10,7 @@ import sys
 sys.path.insert(0, './yolov5')
 
 from google.colab.patches import cv2_imshow
+from IPython.display import Image
 
 import argparse
 import os
@@ -210,7 +211,8 @@ def detect(opt):
                 cv2.putText(im0, str(count), org, font, 
                    fontScale, color, thickness, cv2.LINE_AA)
                 # cv2.imshow(str(p), im0)
-                cv2_imshow(im0)
+                # cv2_imshow(im0)
+                Image(im0)
                 if cv2.waitKey(1) == ord('q'):  # q to quit
                     raise StopIteration
 

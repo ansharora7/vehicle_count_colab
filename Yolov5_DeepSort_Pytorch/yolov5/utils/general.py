@@ -26,6 +26,8 @@ from typing import Optional
 from zipfile import ZipFile
 
 from google.colab.patches import cv2_imshow
+from IPython.display import Image
+
 import cv2
 import numpy as np
 import pandas as pd
@@ -387,7 +389,7 @@ def check_imshow():
     try:
         # assert not is_docker(), 'cv2.imshow() is disabled in Docker environments'
         # assert not is_colab(), 'cv2.imshow() is disabled in Google Colab environments'
-        cv2_imshow(np.zeros((1, 1, 3)))
+        # cv2_imshow(np.zeros((1, 1, 3)))
         cv2.waitKey(1)
         cv2.destroyAllWindows()
         cv2.waitKey(1)
@@ -996,6 +998,7 @@ def increment_path(path, exist_ok=False, sep='', mkdir=False):
 # OpenCV Chinese-friendly functions ------------------------------------------------------------------------------------
 # imshow_ = cv2.imshow  # copy to avoid recursion errors
 imshow_ = cv2_imshow
+# imshow_ = Image
 
 def imread(path, flags=cv2.IMREAD_COLOR):
     return cv2.imdecode(np.fromfile(path, np.uint8), flags)
